@@ -1,0 +1,30 @@
+@media (min-width: 769px) {
+    header > div {
+        /*height: auto;*/
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 280%;
+    }
+
+    header h2 {
+        font-size: 120%;
+    }
+
+    main > div {
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    main > div > a:link,
+    main > div > a:visited {
+        width: 35vw;
+        height: 30vh;
+    }
+
+    main p {
+        font-size: 180%;
+    }
+}
