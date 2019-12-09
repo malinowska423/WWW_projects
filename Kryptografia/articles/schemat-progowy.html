@@ -47,7 +47,7 @@
         <h3>Faza inicjalizacji</h3>
         <li>$T$ wybiera liczbę pierwszą $p > max(S,n)$ i definiuje $a_0 = S$</li>
         <li>$T$ wybiera losowo i niezależnie $t-1$ współczynników $a_1,\dots,a_{t-1} \in \mathbf{Z_p}$</li>
-        <li>$T$ definiuje wielomian nad \mathbf{Z_p}$: $$f(x) = a_0 + sum_{j=0}^{t-1} a_jx^j$$</li>
+        <li>$T$ definiuje wielomian nad $\mathbf{Z_p}$: $$f(x) = a_0 + \sum_{j=0}^{t-1} a_jx^j$$</li>
         <li>Dla $1 \leqslant i \leqslant n$ Zaufana Trzecia Strona $T$ wybiera losowo $x_i \in \mathbf{Z_p}$,
           oblicza: $S_i = f(x_i) \mod p$ i bezpiecznie przekazuje parę $(x_i,S_i)$ użytkownikowy $P_i$
         </li>
