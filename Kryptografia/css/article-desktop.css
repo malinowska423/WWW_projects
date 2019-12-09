@@ -1,0 +1,32 @@
+@media (min-width: 769px) {
+    article {
+        padding: 40px;
+    }
+
+    article h1 {
+        font-size: 170%;
+    }
+
+    article h2 {
+        font-size: 140%;
+    }
+
+    section {
+        padding: 5px 20px;
+    }
+
+    .article-title::after {
+        left: 200px;
+        width: 500px;
+    }
+
+    ol.algorithm {
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .definition {
+        padding: 40px;
+        margin: 30px auto 15px;
+    }
+}

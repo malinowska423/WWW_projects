@@ -24,7 +24,7 @@
         height: 30vh;
     }
 
-    main p {
+    main .menu-header {
         font-size: 180%;
     }
 }
