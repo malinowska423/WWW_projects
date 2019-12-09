@@ -45,7 +45,10 @@ header {
     background-image: url("../img/header.jpg");
 }
 
-header > div {
+header > a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color-dark);
     background-color: rgba(255, 255, 255, .7);
     height: 300px;
     max-height: 60%;

@@ -69,6 +69,11 @@ ol.algorithm > li {
     border-radius: 10px;
 }
 
+ol.algorithm h3 {
+    margin: 10px 5px 5px;
+    align-self: start;
+}
+
 .pseudocode {
     font-family: monospace;
     text-align: left;

@@ -5,17 +5,82 @@
   <title>Zakamarki Kryptografii | Schemat progowy dzielenia sekretu Shamira</title>
   <link rel="Shortcut icon" href="../img/icon.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+      window.MathJax = {
+          tex: {
+              tags: 'ams',
+              inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          "HTML-CSS": {
+              linebreaks: {automatic: true}
+          },
+          "SVG": {
+              linebreaks: {automatic: true}
+          }
+      };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="Stylesheet" type="text/css" href="../css/styles.css"/>
   <link rel="Stylesheet" type="text/css" href="../css/desktop.css"/>
+  <link rel="Stylesheet" type="text/css" href="../css/article.css"/>
+  <link rel="Stylesheet" type="text/css" href="../css/article-desktop.css"/>
 </head>
 <body>
 <header class="all-center photo-background">
-  <div class="all-center">
+  <a class="all-center" href="../index.html">
     <h1>Zakamarki Kryptografii</h1>
     <h2>Aleksandra Malinowska</h2>
-  </div>
+  </a>
 </header>
-<main>
+<main class="all-center">
+  <article>
+    <h1 class="article-title">Schemat progowy $(t,n)$ dzielenia sekretu Shamira</h1>
+    <section>
+      <h2>Algorytm</h2>
+      <ol class="algorithm">
+        <h3>Cel</h3>
+        <li>Zaufana Trzecia Strona $T$ ma sekret $S \geqslant 0$, który chce podzielić pomiędzy $n$ uczestników
+          tak, aby dowolnych $t$ spośród nich mogło sekret odtworzyć.
+        </li>
+        <h3>Faza inicjalizacji</h3>
+        <li>$T$ wybiera liczbę pierwszą $p > max(S,n)$ i definiuje $a_0 = S$</li>
+        <li>$T$ wybiera losowo i niezależnie $t-1$ współczynników $a_1,\dots,a_{t-1} \in \mathbf{Z_p}$</li>
+        <li>$T$ definiuje wielomian nad \mathbf{Z_p}$: $$f(x) = a_0 + sum_{j=0}^{t-1} a_jx^j$$</li>
+        <li>Dla $1 \leqslant i \leqslant n$ Zaufana Trzecia Strona $T$ wybiera losowo $x_i \in \mathbf{Z_p}$,
+          oblicza: $S_i = f(x_i) \mod p$ i bezpiecznie przekazuje parę $(x_i,S_i)$ użytkownikowy $P_i$
+        </li>
+        <h3>Faza łączenia udziałów w sekret</h3>
+        <li>Dowolna grupa $t$ lub więcej użytkowników łączy swoje udziały - $t$ różnych punktów $(x_i,S_i)$
+          wielomianu $f$ i dzięki interpolacji Lagrange'a odzyskuje sekret $S=a_0=f(0)$
+        </li>
+      </ol>
+    </section>
+    <hr class="break-point">
+    <section>
+      <h2>Interpolacja Lagrange'a</h2>
+      <p>Mając dane $t$ różnych punktów $(x_i,y_i)$ nieznanego wielomianu $f$ stopnia mniejszego od $t$ możemy
+        policzyć jego współczynniki korzystając ze wzoru:
+        <span class="math-container">
+          $$
+            f(x) = \sum_{i=1}^{t} \left(y_i \prod_{1 \leqslant j \leqslant t, j \neq i} \frac{x-x_j}{x_i-x_j} \right)
+          \mod p
+          $$
+        </span>
+      </p>
+      <p>W schemacie Shamira, aby odzyskać sekret $S$, użytkownicy nie muszą znać całego wielomianu $f$. Wstawiając
+        do wzoru na interpolację Lagrange'a $x=0$, dostajemy wersję uproszczoną, ale wystarczającą aby policzyć
+        sekret $S=f(0)$:
+        <span class="math-container">
+          $$
+            f(x) = \sum_{i=1}^{t} \left(y_i \prod_{1 \leqslant j \leqslant t, j \neq i} \frac{x_j}{x_j-x_i} \right)
+          \mod p
+          $$
+        </span>
+      </p>
+    </section>
+  </article>
 </main>
 <footer class="all-center">
   <p>2019 &copy; AM. Wszystkie prawa zastrzeżone.</p>
