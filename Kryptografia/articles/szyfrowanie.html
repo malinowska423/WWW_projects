@@ -143,11 +143,11 @@
           $n=p_{1}^{e_1}p_{2}^{e_2}...p_{k}^{e_k}$
           . <span>Symbol Jacobiego</span> $\left(\frac{a}{n}\right)$ jest zdefiniowany jako:
         <div class="math-container">
-          $$
-          \left(\frac{a}{n}\right) = \left(\frac{a}{p_1}\right)^{e_1} \left(\frac{a}{p_2}\right)^{e_2} \dots
-          \left(\frac{a}{p_k}\right)^{e_k}
-          $$
-        </div>
+        $$
+        \bigg(\frac{a}{n}\bigg) = \bigg(\frac{a}{p_1}\bigg)^{e_1} \bigg(\frac{a}{p_2}\bigg)^{e_2} \dots
+        \bigg(\frac{a}{p_k}\bigg)^{e_k}
+        $$
+      </div>
         </p>
         <p>Jeżeli $n$ jest liczbą pierwszą, to symbol Jacobiego jest symbolem Legendre'a.</p>
       </section>
@@ -168,11 +168,11 @@
         <p>Z własności symbolu Jacobiego wynika, że jeżeli $n$ nieparzyste oraz $a$ nieparzyste i w postaci $a =
           2^ea_1$, gdzie $a_1$ też nieparzyste to:
         <div class="math-container">
-          $$
-          \left(\frac{a}{n}\right) = \left(\frac{2^e}{n}\right)\left(\frac{a_1}{n}\right)
-          = \left(\frac{2}{n}\right)^e\left(\frac{n \mod a_1}{a_1}\right)\left(-1\right)^{\frac{(a_1-1)(n-1)}{4}}
-          $$
-        </div>
+        $$
+        \bigg(\frac{a}{n}\bigg) = \bigg(\frac{2^e}{n}\bigg)\bigg(\frac{a_1}{n}\bigg)
+        = \bigg(\frac{2}{n}\bigg)^e\bigg(\frac{n \mod a_1}{a_1}\bigg)\left(-1\right)^{\frac{(a_1-1)(n-1)}{4}}
+        $$
+      </div>
         </p>
       </section>
     </section>
@@ -183,7 +183,7 @@
         $0 \leqslant a < n$. Wtedy algorytm obliczania symbolu Jacobiego ($Jacobi(a,n)$) przedstawia się następująco:
       </p>
       <ol class="algorithm pseudocode">
-        $$\begin{equation} Jacobi(a,n)\nonumber \label{jacobi} \end{equation}$$
+        $$\begin{equation} Jacobi(a,n) \tag{*} \label{jacobi} \end{equation}$$
         <li>If $a = 0$ then return $0$</li>
         <li>If $a=1$ then return $1$</li>
         <li>Write $a=2^ea_1$, gdzie $a_1$ nieparzyste</li>
