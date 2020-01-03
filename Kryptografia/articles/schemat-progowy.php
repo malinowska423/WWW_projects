@@ -1,3 +1,7 @@
+<?php
+require_once '../php/visits.php';
+$counter = getVisitsCounter();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -28,8 +32,15 @@
   <link rel="Stylesheet" type="text/css" href="../css/article-desktop.css"/>
 </head>
 <body>
+<nav>
+    <div id="visit-counter">
+        <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
+        </p>
+    </div>
+    <div id="user-menu"></div>
+</nav>
 <header class="all-center photo-background">
-  <a class="all-center" href="../index.html">
+  <a class="all-center" href="../index.php">
     <h1>Zakamarki Kryptografii</h1>
     <h2>Aleksandra Malinowska</h2>
   </a>

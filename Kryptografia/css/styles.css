@@ -34,13 +34,46 @@ body {
     flex-direction: column;
 }
 
-header, main, footer {
+header, nav, main, footer {
     width: 100%;
     display: flex;
 }
 
+nav {
+    height: 4vh;
+    background-color: var(--main-color-theme);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav div {
+    height: 80%;
+    margin: auto 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#visit-counter {
+    opacity: .6;
+    font-variant: small-caps;
+    letter-spacing: .1em;
+}
+
+#visit-counter span {
+    opacity: 1;
+    font-weight: bolder;
+
+}
+
+#user-menu {
+    border: 1px solid brown;
+}
+
 header {
-    height: 25vh;
+    height: 20vh;
     text-align: center;
     background-image: url("../img/header.jpg");
 }
@@ -75,7 +108,7 @@ header h2 {
 
 main {
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 main > div {

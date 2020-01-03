@@ -1,4 +1,8 @@
 @media (min-width: 769px) {
+    nav {
+        flex-direction: row;
+    }
+
     header > div {
         /*height: auto;*/
         padding: 30px;
