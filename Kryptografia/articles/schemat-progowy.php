@@ -1,6 +1,20 @@
 <?php
+//session_start();
 require_once '../php/visits.php';
+require_once 'comments-service.php';
 $counter = getVisitsCounter();
+
+$isLoggedIn = isset($_SESSION['username']);
+if ($isLoggedIn) {
+  $username = $_SESSION['username'];
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: ../index.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -37,7 +51,15 @@ $counter = getVisitsCounter();
         <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
         </p>
     </div>
-    <div id="user-menu"></div>
+    <div id="user-menu">
+        <?php  if ($isLoggedIn) : ?>
+            <p>Zalogowano jako <span><?php echo $username; ?></span></p>
+            <a class="user-menu-button" href="../index.php?logout='1'">Wyloguj</a>
+        <?php else: ?>
+            <a class="user-menu-button" href="../auth/login.php">Zaloguj</a>
+            <a class="user-menu-button" href="../auth/register.php">Zarejestruj</a>
+        <?php endif ?>
+    </div>
 </nav>
 <header class="all-center photo-background">
   <a class="all-center" href="../index.php">
@@ -136,6 +158,29 @@ $counter = getVisitsCounter();
       </span>
         na podstawie wzoru ($\ref{sh2}$) otrzymuje się wartość sekretu $$S = a(0) \mod 29 = 23.$$
       </p>
+    </section>
+      <hr class="break-point">
+    <section>
+      <h2>Komentarze</h2>
+      <div id="add-comment">
+        <?php  if (isset($_SESSION['username'])) : ?>
+          <form method="post" action="schemat-progowy.php">
+            <input type="hidden" name="article-id" value="2">
+            <input type="hidden" name="author"  value='<?php echo "$username";?>'/>
+            <label>Treść komentarza
+              <textarea name="comment" rows="3" required></textarea>
+            </label>
+            <input type="submit" value="Dodaj" name="add-comment">
+          </form>
+        <?php else: ?>
+          <a href="../auth/login.php">Zaloguj się</a> aby dodać komentarz
+        <?php endif ?>
+
+      </div>
+      <?php $articleId = 2;?>
+      <div id="comments">
+        <?php include('comments.php'); ?>
+      </div>
     </section>
   </article>
 </main>
