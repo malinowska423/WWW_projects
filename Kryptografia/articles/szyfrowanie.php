@@ -47,19 +47,19 @@ if (isset($_GET['logout'])) {
 </head>
 <body>
 <nav>
-    <div id="visit-counter">
-        <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
-        </p>
-    </div>
-    <div id="user-menu">
-      <?php  if ($isLoggedIn) : ?>
-          <p>Zalogowano jako <span><?php echo $username; ?></span></p>
-          <a class="user-menu-button" href="../index.php?logout='1'">Wyloguj</a>
-      <?php else: ?>
-          <a class="user-menu-button" href="../auth/login.php">Zaloguj</a>
-          <a class="user-menu-button" href="../auth/register.php">Zarejestruj</a>
-      <?php endif ?>
-    </div>
+  <div id="visit-counter">
+    <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
+    </p>
+  </div>
+  <div id="user-menu">
+    <?php if ($isLoggedIn) : ?>
+      <p>Zalogowano jako <span><?php echo $username; ?></span></p>
+      <a class="user-menu-button" href="../index.php?logout='1'">Wyloguj</a>
+    <?php else: ?>
+      <a class="user-menu-button" href="../auth/login.php">Zaloguj</a>
+      <a class="user-menu-button" href="../auth/register.php">Zarejestruj</a>
+    <?php endif ?>
+  </div>
 </nav>
 <header class="all-center photo-background">
   <a class="all-center" href="../index.php">
@@ -72,7 +72,8 @@ if (isset($_GET['logout'])) {
     <h1 class="article-title">Schemat Goldwasser-Micali szyfrowania probabilistycznego</h1>
     <section>
       <h2>Algorytm generowania kluczy</h2>
-      <p>Schemat Goldwasser-Micali wymaga wygenerowania klucza prywatnego i publicznego. Proces tworzenia tych kluczy
+      <p>Schemat Goldwasser-Micali wymaga wygenerowania klucza prywatnego i publicznego. Proces tworzenia tych
+        kluczy
         przedstawia poniższy algorytm.
       </p>
       <ol class="algorithm">
@@ -88,7 +89,8 @@ if (isset($_GET['logout'])) {
     </section>
     <section>
       <h2>Algorytm szyfrowania</h2>
-      <p>Chcąc zaszyfrować wiadomość $m$ przy użyciu klucza publicznego $(n, y)$ należy wykonać przedstawiony poniżej
+      <p>Chcąc zaszyfrować wiadomość $m$ przy użyciu klucza publicznego $(n, y)$ należy wykonać przedstawiony
+        poniżej
         algorytm.
       </p>
       <ol class="algorithm">
@@ -104,13 +106,15 @@ if (isset($_GET['logout'])) {
     </section>
     <section>
       <h2>Algorytm deszyfrowania</h2>
-      <p>Chcąc odzyskać wiadomość z kryptogramu $c$ przy użyciu klucza prywatnego $(p,q)$ należy przeprowadzić poniższy
+      <p>Chcąc odzyskać wiadomość z kryptogramu $c$ przy użyciu klucza prywatnego $(p,q)$ należy przeprowadzić
+        poniższy
         algorytm.
       </p>
       <ol class="algorithm">
         <li class="pseudocode">
           <p>For $i$ from $1$ to $t$ do</p>
-          <p class="tab-1">policz symbol Legendre'a $e_i = \left( \frac{c_i}{p}\right)$ (algorytm $(\ref{jacobi})$)</p>
+          <p class="tab-1">policz symbol Legendre'a $e_i = \left( \frac{c_i}{p}\right)$ (algorytm
+            $(\ref{jacobi})$)</p>
           <p class="tab-1">If $e_i = 1$ then set $m_i \leftarrow 0$</p>
           <p class="tab-1">Else set $m_i \leftarrow 1$</p>
         </li>
@@ -124,7 +128,8 @@ if (isset($_GET['logout'])) {
         <h3>Definicja</h3>
         <p>Niech $a \in \mathbf{Z_n}$. Mówimy, ze $a$ jest
           <span>resztą kwadratową modulo $n$ (kwadartem modulo $n$)</span>, jeżeli
-          istnieje $x \in \mathbf{Z_n^*}$ takie, że $x^2 \equiv a \mod p$. Jeżeli takie $x$ nie istnieje, to wówczas
+          istnieje $x \in \mathbf{Z_n^*}$ takie, że $x^2 \equiv a \mod p$. Jeżeli takie $x$ nie istnieje, to
+          wówczas
           $a$ nazywamy <span>nieresztą
             kwadartową modulo $n$</span>.
           Zbiór wszystkich reszt kwadartowych modulo $n$ oznaczamy $Q_n$, zaś zbiór wszystkich niereszt
@@ -176,11 +181,11 @@ if (isset($_GET['logout'])) {
           $n=p_{1}^{e_1}p_{2}^{e_2}...p_{k}^{e_k}$
           . <span>Symbol Jacobiego</span> $\left(\frac{a}{n}\right)$ jest zdefiniowany jako:
         <div class="math-container">
-        $$
-        \bigg(\frac{a}{n}\bigg) = \bigg(\frac{a}{p_1}\bigg)^{e_1} \bigg(\frac{a}{p_2}\bigg)^{e_2} \dots
-        \bigg(\frac{a}{p_k}\bigg)^{e_k}
-        $$
-      </div>
+          $$
+          \bigg(\frac{a}{n}\bigg) = \bigg(\frac{a}{p_1}\bigg)^{e_1} \bigg(\frac{a}{p_2}\bigg)^{e_2} \dots
+          \bigg(\frac{a}{p_k}\bigg)^{e_k}
+          $$
+        </div>
         </p>
         <p>Jeżeli $n$ jest liczbą pierwszą, to symbol Jacobiego jest symbolem Legendre'a.</p>
       </section>
@@ -196,31 +201,36 @@ if (isset($_GET['logout'])) {
           <li>$\left(\frac{1}{n}\right) = 1$</li>
           <li>$\left(\frac{-1}{n}\right) = (-1)^{\frac{n-1}{2}}$</li>
           <li>$\left(\frac{2}{n}\right) = (-1)^{\frac{n^2-1}{8}}$</li>
-          <li>$\left(\frac{m}{n}\right) = \left(\frac{n}{m}\right) \left(-1\right)^{\frac{(m-1)(n-1)}{4}}$</li>
+          <li>$\left(\frac{m}{n}\right) = \left(\frac{n}{m}\right) \left(-1\right)^{\frac{(m-1)(n-1)}{4}}$
+          </li>
         </ul>
         <p>Z własności symbolu Jacobiego wynika, że jeżeli $n$ nieparzyste oraz $a$ nieparzyste i w postaci $a =
           2^ea_1$, gdzie $a_1$ też nieparzyste to:
         <div class="math-container">
-        $$
-        \bigg(\frac{a}{n}\bigg) = \bigg(\frac{2^e}{n}\bigg)\bigg(\frac{a_1}{n}\bigg)
-        = \bigg(\frac{2}{n}\bigg)^e\bigg(\frac{n \mod a_1}{a_1}\bigg)\left(-1\right)^{\frac{(a_1-1)(n-1)}{4}}
-        $$
-      </div>
+          $$
+          \bigg(\frac{a}{n}\bigg) = \bigg(\frac{2^e}{n}\bigg)\bigg(\frac{a_1}{n}\bigg)
+          = \bigg(\frac{2}{n}\bigg)^e\bigg(\frac{n \mod
+          a_1}{a_1}\bigg)\left(-1\right)^{\frac{(a_1-1)(n-1)}{4}}
+          $$
+        </div>
         </p>
       </section>
     </section>
     <hr class="break-point">
     <section>
       <h2>Algorytm obliczania symbolu Jacobiego (i Legendre'a)</h2>
-      <p>Niech $n$ będzie nieparzystą liczbą całkowitą i $n \geqslant 3$ oraz niech $a$ będzie liczbą całkowitą taką, że
-        $0 \leqslant a < n$. Wtedy algorytm obliczania symbolu Jacobiego ($Jacobi(a,n)$) przedstawia się następująco:
+      <p>Niech $n$ będzie nieparzystą liczbą całkowitą i $n \geqslant 3$ oraz niech $a$ będzie liczbą całkowitą
+        taką, że
+        $0 \leqslant a < n$. Wtedy algorytm obliczania symbolu Jacobiego ($Jacobi(a,n)$) przedstawia się
+        następująco:
       </p>
       <ol class="algorithm pseudocode">
         $$\begin{equation} Jacobi(a,n) \tag{*} \label{jacobi} \end{equation}$$
         <li>If $a = 0$ then return $0$</li>
         <li>If $a=1$ then return $1$</li>
         <li>Write $a=2^ea_1$, gdzie $a_1$ nieparzyste</li>
-        <li>If $e$ parzyste set $s \leftarrow 1$<br>Else set $s \leftarrow 1$ if $n \equiv 1 \lor 7 \pmod 8$, or set
+        <li>If $e$ parzyste set $s \leftarrow 1$<br>Else set $s \leftarrow 1$ if $n \equiv 1 \lor 7 \pmod 8$, or
+          set
           $s \leftarrow -1$ if $n \equiv 3 \lor 5 \pmod 8$
         </li>
         <li>If $n \equiv 3 \pmod 4$ and $a_1 \equiv 3 \pmod 4$ then set $s \leftarrow -s$</li>
@@ -229,33 +239,34 @@ if (isset($_GET['logout'])) {
       </ol>
       <p>Czas działania tego algorytmu wynosi $\mathcal{O}((\lg{n})^2)$ operacji bitowych.</p>
     </section>
-      <hr class="break-point">
-      <section>
-          <h2>Komentarze</h2>
-          <div id="add-comment">
-            <?php  if (isset($_SESSION['username'])) : ?>
-                <form method="post" action="schemat-progowy.php">
-                    <input type="hidden" name="article-id" value="1">
-                    <input type="hidden" name="author"  value='<?php echo "$username";?>'/>
-                    <label>Treść komentarza
-                        <textarea name="comment" rows="3" required></textarea>
-                    </label>
-                    <input type="submit" value="Dodaj" name="add-comment">
-                </form>
-            <?php else: ?>
-                <a href="../auth/login.php">Zaloguj się</a> aby dodać komentarz
-            <?php endif ?>
+    <hr class="break-point">
+    <section>
+      <h2>Komentarze</h2>
+      <div id="add-comment">
+        <?php if (isset($_SESSION['username'])) : ?>
+          <form method="post" action="schemat-progowy.php">
+            <input type="hidden" name="article-id" value="1">
+            <input type="hidden" name="author" value='<?php echo "$username"; ?>'/>
+            <label>Treść komentarza
+              <textarea name="comment" rows="3" placeholder="Tu wpisz komentarz..." required></textarea>
+            </label>
+            <input type="submit" value="Dodaj" name="add-comment" class="btn-submit">
+          </form>
+        <?php else: ?>
+          <p>Tylko zalogowani użytkownicy mogą dodawać komentarze</p>
+          <a href="../auth/login.php" class="btn-sign">Zaloguj się</a>
+        <?php endif ?>
 
-          </div>
-        <?php $articleId = 1;?>
-          <div id="comments">
-            <?php include('comments.php'); ?>
-          </div>
-      </section>
+      </div>
+      <?php $articleId = 1; ?>
+      <div id="comments">
+        <?php include('comments.php'); ?>
+      </div>
+    </section>
   </article>
 </main>
 <footer class="all-center">
-  <p>2019 &copy; AM. Wszystkie prawa zastrzeżone.</p>
+  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone.</p>
 </footer>
 </body>
 </html>

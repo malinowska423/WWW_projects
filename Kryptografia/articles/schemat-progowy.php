@@ -10,9 +10,9 @@ if ($isLoggedIn) {
 }
 
 if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location: ../index.php");
+  session_destroy();
+  unset($_SESSION['username']);
+  header("location: ../index.php");
 }
 
 ?>
@@ -47,19 +47,19 @@ if (isset($_GET['logout'])) {
 </head>
 <body>
 <nav>
-    <div id="visit-counter">
-        <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
-        </p>
-    </div>
-    <div id="user-menu">
-        <?php  if ($isLoggedIn) : ?>
-            <p>Zalogowano jako <span><?php echo $username; ?></span></p>
-            <a class="user-menu-button" href="../index.php?logout='1'">Wyloguj</a>
-        <?php else: ?>
-            <a class="user-menu-button" href="../auth/login.php">Zaloguj</a>
-            <a class="user-menu-button" href="../auth/register.php">Zarejestruj</a>
-        <?php endif ?>
-    </div>
+  <div id="visit-counter">
+    <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
+    </p>
+  </div>
+  <div id="user-menu">
+    <?php if ($isLoggedIn) : ?>
+      <p>Zalogowano jako <span><?php echo $username; ?></span></p>
+      <a class="user-menu-button" href="../index.php?logout='1'">Wyloguj</a>
+    <?php else: ?>
+      <a class="user-menu-button" href="../auth/login.php">Zaloguj</a>
+      <a class="user-menu-button" href="../auth/register.php">Zarejestruj</a>
+    <?php endif ?>
+  </div>
 </nav>
 <header class="all-center photo-background">
   <a class="all-center" href="../index.php">
@@ -159,25 +159,26 @@ if (isset($_GET['logout'])) {
         na podstawie wzoru ($\ref{sh2}$) otrzymuje się wartość sekretu $$S = a(0) \mod 29 = 23.$$
       </p>
     </section>
-      <hr class="break-point">
+    <hr class="break-point">
     <section>
       <h2>Komentarze</h2>
       <div id="add-comment">
-        <?php  if (isset($_SESSION['username'])) : ?>
+        <?php if (isset($_SESSION['username'])) : ?>
           <form method="post" action="schemat-progowy.php">
             <input type="hidden" name="article-id" value="2">
-            <input type="hidden" name="author"  value='<?php echo "$username";?>'/>
+            <input type="hidden" name="author" value='<?php echo "$username"; ?>'/>
             <label>Treść komentarza
-              <textarea name="comment" rows="3" required></textarea>
+              <textarea name="comment" rows="3" placeholder="Tu wpisz komentarz..." required></textarea>
             </label>
-            <input type="submit" value="Dodaj" name="add-comment">
+            <input type="submit" value="Dodaj" name="add-comment" class="btn-submit">
           </form>
         <?php else: ?>
-          <a href="../auth/login.php">Zaloguj się</a> aby dodać komentarz
+          <p>Tylko zalogowani użytkownicy mogą dodawać komentarze</p>
+          <a href="../auth/login.php" class="btn-sign">Zaloguj się</a>
         <?php endif ?>
 
       </div>
-      <?php $articleId = 2;?>
+      <?php $articleId = 2; ?>
       <div id="comments">
         <?php include('comments.php'); ?>
       </div>
@@ -185,7 +186,7 @@ if (isset($_GET['logout'])) {
   </article>
 </main>
 <footer class="all-center">
-  <p>2019 &copy; AM. Wszystkie prawa zastrzeżone.</p>
+  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone.</p>
 </footer>
 </body>
 </html>

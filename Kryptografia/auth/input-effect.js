@@ -9,10 +9,10 @@ const InputEffect = function () {
             el.parentElement.style.color = activeColor;
             el.parentElement.style.borderBottomColor = activeColor;
         },
-    deactivate: function (el) {
-        el.parentElement.style.color = inactiveColor;
-        el.parentElement.style.borderBottomColor = inactiveColor;
-    }
+        deactivate: function (el) {
+            el.parentElement.style.color = inactiveColor;
+            el.parentElement.style.borderBottomColor = inactiveColor;
+        }
     };
 
     placeholderPosition = function (el) {
