@@ -42,7 +42,7 @@ header, nav, main, footer {
 nav {
     height: 4vh;
     background-color: var(--main-color-theme);
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -68,8 +68,28 @@ nav div {
 
 }
 
-#user-menu {
-    border: 1px solid brown;
+#user-menu p {
+    opacity: .6;
+    font-size: 90%;
+}
+
+#user-menu span {
+    font-style: italic;
+}
+
+.user-menu-button {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .8);
+    padding: 4px 10px;
+    margin: auto 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-size: 95%;
+    transition-duration: 300ms;
+}
+
+.user-menu-button:hover {
+    background-color: rgba(4, 124, 100, .9);
 }
 
 header {

@@ -1,6 +1,13 @@
 <?php
 require_once 'php/visits.php';
 $counter = getVisitsCounter();
+session_start();
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -18,7 +25,15 @@ $counter = getVisitsCounter();
         <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
         </p>
     </div>
-    <div id="user-menu"></div>
+    <div id="user-menu">
+        <?php  if (isset($_SESSION['username'])) : ?>
+            <p>Zalogowano jako <span><?php echo $_SESSION['username']; ?></span></p>
+            <a class="user-menu-button" href="index.php?logout='1'">Wyloguj</a>
+        <?php else: ?>
+            <a class="user-menu-button" href="auth/login.php">Zaloguj</a>
+            <a class="user-menu-button" href="auth/register.php">Zarejestruj</a>
+        <?php endif ?>
+    </div>
 </nav>
 <header class="all-center photo-background">
     <a class="all-center">
@@ -37,7 +52,7 @@ $counter = getVisitsCounter();
     </div>
 </main>
 <footer class="all-center">
-    <p>2019 &copy; AM. Wszystkie prawa zastrzeżone.</p>
+    <p>2020 &copy; AM. Wszystkie prawa zastrzeżone.</p>
 </footer>
 </body>
 </html>
