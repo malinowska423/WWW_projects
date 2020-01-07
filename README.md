@@ -8,3 +8,8 @@ Jest to strona internetowa przedstawiająca dwa zagadnienia kryptologiczne:
 2. Schemat progowy dzielenia sekretu Shamira ze wzorem na interpolację Lagrange’a i przykładem policzonym ręcznie dla niedużych liczb. `articles/schemat-progowy.html`
 
 Wszystkie materiały umieszczone na stronie zostały zaczerpnięte od dr prowadzącej kurs.
+
+### Serwis Kryptografia
+
+Strona została przekształcona w serwis umożliwiający rejestrację i logowanie użytkowników. Dodatkowo zalogowany użytkownik posiada możliwość dodawania komentarzy pod artykułami. Sesj każdego użytkownika trwa 5 minut, po tym czasie zostaje on zalogowany.
+Do strony został również dodany licznik odwiedzin aktualizujący się raz na dobę dla danego numeru IP. Wraz z serwisem autoryzacji została dodana polityka ciasteczek.
