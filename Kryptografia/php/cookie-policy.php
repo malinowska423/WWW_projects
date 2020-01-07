@@ -2,16 +2,11 @@
 session_start();
 require_once '../php/visits.php';
 $counter = getVisitsCounter();
+require_once 'auto-logout.php';
 
 $isLoggedIn = isset($_SESSION['username']);
 if ($isLoggedIn) {
   $username = $_SESSION['username'];
-}
-
-if (isset($_GET['logout'])) {
-  session_destroy();
-  unset($_SESSION['username']);
-  header("location: ../index.php");
 }
 
 ?>

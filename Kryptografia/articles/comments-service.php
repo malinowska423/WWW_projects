@@ -1,5 +1,4 @@
 <?php
-session_start();
 $errors = array();
 $servername = "localhost";
 $username = "kryptoUser";

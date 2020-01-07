@@ -1,11 +1,12 @@
 <?php
+session_start();
 require_once 'php/visits.php';
 $counter = getVisitsCounter();
-session_start();
+require_once 'php/auto-logout.php';
 
 if (isset($_GET['logout'])) {
+  session_unset();
   session_destroy();
-  unset($_SESSION['username']);
   header("location: index.php");
 }
 ?>

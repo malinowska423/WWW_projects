@@ -1,18 +1,13 @@
 <?php
-//session_start();
+session_start();
 require_once '../php/visits.php';
 require_once 'comments-service.php';
+require_once '../php/auto-logout.php';
 $counter = getVisitsCounter();
 
 $isLoggedIn = isset($_SESSION['username']);
 if ($isLoggedIn) {
   $username = $_SESSION['username'];
-}
-
-if (isset($_GET['logout'])) {
-  session_destroy();
-  unset($_SESSION['username']);
-  header("location: ../index.php");
 }
 
 ?>

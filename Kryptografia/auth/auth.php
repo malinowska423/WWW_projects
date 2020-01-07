@@ -44,7 +44,7 @@ if (isset($_POST['register'])) {
   			  VALUES('$username', '$email', '$password')";
     mysqli_query($db, $query);
     $_SESSION['username'] = $username;
-    $_SESSION['success'] = "Zalogowano";
+    $_SESSION['timestamp'] = time();
     header('location: ../index.php');
     exit();
   }
@@ -68,7 +68,7 @@ if (isset($_POST['login'])) {
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
-      $_SESSION['success'] = "Zalogowano";
+      $_SESSION['timestamp'] = time();
       header('location: ../index.php');
       exit();
     } else {
