@@ -13,8 +13,6 @@ if (isset($_POST['register'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) {
     array_push($errors, "Nazwa użytkownika jest wymagana");
   }
@@ -25,8 +23,6 @@ if (isset($_POST['register'])) {
     array_push($errors, "Hasło jest wymagane");
   }
 
-  // first check the database to make sure
-  // a user does not already exist with the same username and/or email
   $user_check_query = "SELECT * FROM uzytkownicy WHERE nazwa='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
@@ -41,7 +37,6 @@ if (isset($_POST['register'])) {
     }
   }
 
-  // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
     $password = md5($password);//encrypt the password before saving in the database
 
@@ -51,6 +46,7 @@ if (isset($_POST['register'])) {
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "Zalogowano";
     header('location: ../index.php');
+    exit();
   }
 }
 
@@ -74,6 +70,7 @@ if (isset($_POST['login'])) {
       $_SESSION['username'] = $username;
       $_SESSION['success'] = "Zalogowano";
       header('location: ../index.php');
+      exit();
     } else {
       array_push($errors, "Nieprawidłowa nazwa użytkownika lub hasło");
     }

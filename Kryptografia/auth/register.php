@@ -37,9 +37,10 @@ require_once 'auth.php';
   <p class="redirect">Masz już konto? <a href="login.php">Zaloguj się</a></p>
 </main>
 <footer class="all-center">
-  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone.</p>
+  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone. <a href="../php/cookie-policy.php">Polityka cookies</a></p>
 </footer>
 <script src="input-effect.js"></script>
+<?php include("../php/cookies.php"); ?>
 </body>
 </html>
 

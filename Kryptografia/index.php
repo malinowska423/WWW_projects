@@ -52,7 +52,8 @@ if (isset($_GET['logout'])) {
   </div>
 </main>
 <footer class="all-center">
-  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone.</p>
+  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone. <a href="php/cookie-policy.php">Polityka cookies</a></p>
 </footer>
+<?php include("php/cookies.php"); ?>
 </body>
 </html>
