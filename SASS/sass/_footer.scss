@@ -1,0 +1,34 @@
+/* CONTACT ME SECTION */
+
+.social-icon {
+  float: left;
+  padding: 15px;
+  max-width: 150px;
+  width: 45%;
+  margin: 20px 2.5%;
+}
+
+.social-icon img {
+  width: 100%;
+}
+
+.social-icon > a:hover > img {
+  filter: invert(100%);
+  transition-duration: 0.5s;
+}
+
+
+/* FOOTER SECTION */
+
+footer {
+  height: 60px;
+  font-family: var(--main-basic-font);
+  font-size: 90%;
+  text-align: center;
+  padding: 20px;
+}
+
+footer  p {
+  opacity: 0.6;
+}
+

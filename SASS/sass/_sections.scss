@@ -1,0 +1,25 @@
+#profile-photo {
+  display: block;
+  float: right;
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
+}
+
+#profile-photo + article {
+  float: left;
+  width: 90%;
+  margin: auto;
+}
+
+#profile-photo .article-content {
+  font-size: 120%;
+}
+
+#projects-section {
+  background-image: url("../img/projects2.jpg");
+}
+
+#hobby-section {
+  background-image: url("../img/main_photo.jpg");
+}

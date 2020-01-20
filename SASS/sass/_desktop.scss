@@ -1,0 +1,71 @@
+@media screen and (min-width: 1000px) {
+  .photo-background {
+    /*background-size: 100% auto;*/
+  }
+
+  .main-section {
+    padding: 35px 50px;
+  }
+
+  .main-article {
+    padding: 20px 45px 30px;
+  }
+
+  .section-col-3 > .column {
+    width: 30%;
+    margin: 20px 1.5%;
+  }
+
+  .section-col-2 > .column {
+    width: 44%;
+    margin: 20px 3%;
+  }
+
+  .section-col-5 > .column {
+    width: 13%;
+    margin: 20px 3.5%;
+  }
+
+  .section-title::after {
+    left: 65px;
+  }
+
+  .column.social-icon {
+    max-width: unset;
+  }
+
+  #profile-photo {
+    max-width: 40%;
+    max-height: 250px;
+    width: auto;
+    margin: auto;
+  }
+
+  #profile-photo + article {
+    width: 60%;
+  }
+
+  #gallery {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 5%;
+
+  }
+
+  #gallery > img {
+    display: block;
+    max-width: 30%;
+  }
+}
+
+
+@media (min-aspect-ratio: 3/2) {
+  .photo-background {
+    background-size: 100% auto;
+  }
+}
