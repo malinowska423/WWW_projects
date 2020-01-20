@@ -6,15 +6,15 @@
   max-width: 150px;
   width: 45%;
   margin: 20px 2.5%;
-}
 
-.social-icon img {
-  width: 100%;
-}
+  img {
+    width: 100%;
+  }
 
-.social-icon > a:hover > img {
-  filter: invert(100%);
-  transition-duration: 0.5s;
+  a:hover > img {
+     filter: invert(100%);
+     transition-duration: 0.5s;
+   }
 }
 
 
@@ -22,13 +22,12 @@
 
 footer {
   height: 60px;
-  font-family: var(--main-basic-font);
-  font-size: 90%;
-  text-align: center;
-  padding: 20px;
-}
+  font-family: $main-basic-font;
+  @include all-center();
 
-footer  p {
-  opacity: 0.6;
+  p {
+    opacity: .6;
+    font-size: 90%;
+  }
 }
 

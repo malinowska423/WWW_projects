@@ -1,38 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Rajdhani|&display=swap');
+
+$header-title-font: 'Open Sans Condensed', sans-serif;
+$header-subtitle-font: 'Rajdhani', sans-serif;
+$header-light-color: #FFF;
+
 header {
-  --header-title-font: 'Open Sans Condensed', sans-serif;
-  --header-subtitle-font: 'Rajdhani', sans-serif;
-  --header-light-color: #FFF;
   height: 100vh;
   position: relative;
   background-image: url("../img/main_photo_3.JPG");
   background-position: bottom;
-  display: flex;
-  flex-direction: column;
+  @include all-center();
 }
 
 .header-title {
-  font-family: var(--header-title-font);
+  font-family: $header-title-font;
   font-weight: 100;
   font-size: 300%;
   margin-bottom: 30px;
 }
 
 .header-subtitle {
-  font-family: var(--header-subtitle-font);
+  font-family: $header-subtitle-font;
   font-size: 155%;
 }
 
 #title-container {
   text-align: center;
   font-weight: lighter;
-  border: 1px solid var(--header-light-color);
+  border: 1px solid $header-light-color;
   min-width: 300px;
   min-height: 25vh;
   width: 40%;
-  display: flex;
-  flex-direction: column;
+  @include all-center();
   align-content: space-around;
-  justify-content: center;
-  align-items: center;
 }

@@ -1,5 +1,5 @@
 function loadFooter() {
-  document.write('<div class="center"><p>2020 &copy; Aleksandra Malinowska | All rights reserved</p></div>');
+  document.write('<div><p>2020 &copy; Aleksandra Malinowska | All rights reserved</p></div>');
 }
 
 function loadContact() {

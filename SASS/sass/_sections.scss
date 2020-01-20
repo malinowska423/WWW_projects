@@ -4,16 +4,16 @@
   width: 90%;
   height: auto;
   margin: 20px auto;
+
+  .article-content {
+    font-size: 120%;
+  }
 }
 
 #profile-photo + article {
   float: left;
   width: 90%;
   margin: auto;
-}
-
-#profile-photo .article-content {
-  font-size: 120%;
 }
 
 #projects-section {
