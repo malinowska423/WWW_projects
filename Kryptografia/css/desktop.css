@@ -1,30 +1,34 @@
 @media (min-width: 769px) {
-    header > div {
-        /*height: auto;*/
-        padding: 30px;
-    }
+  nav {
+    flex-direction: row;
+  }
 
-    header h1 {
-        font-size: 280%;
-    }
+  header > div {
+    /*height: auto;*/
+    padding: 30px;
+  }
 
-    header h2 {
-        font-size: 120%;
-    }
+  header h1 {
+    font-size: 280%;
+  }
 
-    main > div {
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
-    }
+  header h2 {
+    font-size: 120%;
+  }
 
-    main > div > a:link,
-    main > div > a:visited {
-        width: 35vw;
-        height: 30vh;
-    }
+  main > div {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
 
-    main .menu-header {
-        font-size: 180%;
-    }
+  main > div > a:link,
+  main > div > a:visited {
+    width: 35vw;
+    height: 30vh;
+  }
+
+  main .menu-header {
+    font-size: 180%;
+  }
 }

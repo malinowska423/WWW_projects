@@ -1,3 +1,16 @@
+<?php
+session_start();
+require_once '../php/visits.php';
+require_once 'comments-service.php';
+require_once '../php/auto-logout.php';
+$counter = getVisitsCounter();
+
+$isLoggedIn = isset($_SESSION['username']);
+if ($isLoggedIn) {
+  $username = $_SESSION['username'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -28,8 +41,23 @@
   <link rel="Stylesheet" type="text/css" href="../css/article-desktop.css"/>
 </head>
 <body>
+<nav>
+  <div id="visit-counter">
+    <p>Odwiedzono <span><?php echo $counter ?></span> <?php echo($counter == 1 ? "raz" : "razy") ?>
+    </p>
+  </div>
+  <div id="user-menu">
+    <?php if ($isLoggedIn) : ?>
+      <p>Zalogowano jako <span><?php echo $username; ?></span></p>
+      <a class="user-menu-button" href="../index.php?logout='1'">Wyloguj</a>
+    <?php else: ?>
+      <a class="user-menu-button" href="../auth/login.php">Zaloguj</a>
+      <a class="user-menu-button" href="../auth/register.php">Zarejestruj</a>
+    <?php endif ?>
+  </div>
+</nav>
 <header class="all-center photo-background">
-  <a class="all-center" href="../index.html">
+  <a class="all-center" href="../index.php">
     <h1>Zakamarki Kryptografii</h1>
     <h2>Aleksandra Malinowska</h2>
   </a>
@@ -126,10 +154,35 @@
         na podstawie wzoru ($\ref{sh2}$) otrzymuje się wartość sekretu $$S = a(0) \mod 29 = 23.$$
       </p>
     </section>
+    <hr class="break-point">
+    <section>
+      <h2>Komentarze</h2>
+      <div id="add-comment">
+        <?php if (isset($_SESSION['username'])) : ?>
+          <form method="post" action="schemat-progowy.php">
+            <input type="hidden" name="article-id" value="2">
+            <input type="hidden" name="author" value='<?php echo "$username"; ?>'/>
+            <label>Treść komentarza
+              <textarea name="comment" rows="3" placeholder="Tu wpisz komentarz..." required></textarea>
+            </label>
+            <input type="submit" value="Dodaj" name="add-comment" class="btn-submit">
+          </form>
+        <?php else: ?>
+          <p>Tylko zalogowani użytkownicy mogą dodawać komentarze</p>
+          <a href="../auth/login.php" class="btn-sign">Zaloguj się</a>
+        <?php endif ?>
+
+      </div>
+      <?php $articleId = 2; ?>
+      <div id="comments">
+        <?php include('comments.php'); ?>
+      </div>
+    </section>
   </article>
 </main>
 <footer class="all-center">
-  <p>2019 &copy; AM. Wszystkie prawa zastrzeżone.</p>
+  <p>2020 &copy; AM. Wszystkie prawa zastrzeżone. <a href="../php/cookie-policy.php">Polityka cookies</a></p>
 </footer>
+<?php include("../php/cookies.php"); ?>
 </body>
 </html>
