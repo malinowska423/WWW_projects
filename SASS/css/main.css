@@ -1,0 +1,9 @@
+/* line 1, ../sass/_header.scss */
+* {
+    color: red;
+}
+
+/* line 6, ../sass/main.scss */
+* {
+    background-color: blue;
+}

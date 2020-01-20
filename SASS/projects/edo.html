@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>AM | Edo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Edo">
+  <meta property="og:image" content="https://amalinowska.pl/img/logo.png">
+  <meta property="og:description" content="Aleksandra Malinowska Portfolio">
+  <link rel="Shortcut icon" href="../../img/icon.png"/>
+  <link rel="Stylesheet" type="text/css" href="../css/main.css"/>
+  <link rel="Stylesheet" type="text/css" href="../css/header.css"/>
+  <link rel="Stylesheet" type="text/css" href="../css/sections.css"/>
+  <link rel="Stylesheet" type="text/css" href="../css/footer.css"/>
+  <link href="../css/desktop.css" rel="Stylesheet" type="text/css"/>
+  <link rel="Stylesheet" type="text/css" href="projects.css"/>
+  <script src="../js/footer.js"></script>
+</head>
+<body>
+<header class="photo-background full-width">
+  <div id="title-container" class="center">
+    <h1 class="header-title">Aleksandra Malinowska</h1>
+    <h4 class="header-subtitle">portfolio</h4>
+  </div>
+</header>
+<div class="no-photo-background full-width">
+  <section class="center main-section">
+    <h2 class="section-title">Edo</h2>
+    <article class="main-article">
+      <h4 class="article-title project-section-title">Takie pomysły to skąd?</h4>
+      <p class="article-content project-section-content">Edo to projekt kończący kurs Aplikacje mobilne, wykonany w
+        pięcioosobowym zespole w ciągu około dwóch miesięcy. Pomysł na grę zrodził się z chęci przeniesienia dopiero
+        raczkującej gry planszowej pod tym samym tytułem na platformę mobilną.
+      </p>
+      <p class="article-content project-section-content">Głównym celem projektu było jednak opanowanie sposobów pisania
+        aplikacji na system Android w języku kotlin.
+      </p>
+      <h4 class="article-title project-section-title">Ale na czym to polega?</h4>
+      <p class="article-content project-section-content">Gra odbywa się w czasie rzeczywistym w trybie online, dlatego
+        też każdy użytkownik aplikacji musi założyć konto powiązane z adresem e-mail. Następnie może utworzyć nowy,
+        unikalnie kodowany pokój, lub dołączyć do istniejącej, nierozpoczętej gry. Tworząc nową grę staje przed wyborem
+        m.in. ilości graczy, władanego miasta oraz trybu gry - publicznego lub prywatnego.
+      </p>
+      <div class="section-col-3">
+        <img class="column" src="../img/edo.jpg" alt="main activity">
+        <img class="column" src="../img/edo2.jpg" alt="new game activity">
+        <img class="column" src="../img/edo3.jpg" alt="all games activity">
+      </div>
+      <p class="article-content project-section-content">W przypadku, gdy gracz chciałby dołączyć do nowej gry, może
+        wyszukać ją na liście wszystkich publicznych gier lub dołączyć natychmiast do gry prywatnej - o ile zna jej kod.
+        W każdej chwili gracz ma prawo wyjść z gry, jednak nie oznacza to dla niego końca rozgrywki. Lista aktywnych
+        gier jest przechowywana w profilu gracza tak, aby zawsze mógł wrócić i dokończyć rundę.
+      </p>
+      <h4 class="article-title project-section-title">Troszkę kodu</h4>
+      <p class="article-content project-section-content">Niewątpliwie największym wyzwaniem w aplikacji było sprawienie
+        by gra toczyła się w czasie rzeczywistym u wszystkich użytkowników. Jednym z powstałych przy tym problemów było
+        poprawne budowanie sceny gry. Poniżej przedstawiam fragment kodu odpowiedzialny za wyświetlanie odpowiedniej
+        liczby graczy na planszy z dopasowanym do gracza kolorem tła.
+      </p>
+      <script src="https://gist.github.com/malinowska423/0b2dcbe27d3f33595d3ff220e14e48ae.js"></script>
+    </article>
+
+  </section>
+</div>
+<div class="no-photo-background full-width go-back-to-home main-section">
+  <div class="center">
+    <a href="../index.html">Wróć na Stronę Główną</a>
+  </div>
+</div>
+<div class="no-photo-background full-width">
+  <script>loadContact();</script>
+</div>
+<footer class="photo-background full-width">
+  <script>
+    loadFooter();
+  </script>
+</footer>
+</body>
+</html>
