@@ -1,0 +1,69 @@
+@import 'main.scss';
+
+header {
+  height: 80vh;
+}
+
+.go-back-to-home {
+  min-height: 100px;
+
+  a:link, a:visited {
+    display: block;
+    margin: auto;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    font-size: 120%;
+    font-family: $main-header-font;
+    width: 40%;
+    background-color: $main-color-theme;
+    color: $main-color;
+    border: 1px solid $main-color-theme;
+  }
+
+  a:hover {
+    color: $main-color-theme;
+    background: none;
+  }
+}
+
+.project-section-title {
+  text-align: left;
+  font-size: 140%;
+  margin: 10px auto;
+}
+
+.project-section-content {
+  text-align: justify;
+  text-indent: 12px;
+  margin: 10px 15px;
+
+  a:link, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: $main-color-dark;
+    font-style: italic;
+  }
+
+  a:hover {
+    opacity: .9;
+    color: $main-color-dark;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .go-back-to-home a:link, .go-back-to-home a:visited {
+    width: 90%;
+  }
+
+  .main-article {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gist {
+    width: 85vw;
+  }
+}

@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans|Rajdhani|&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Rajdhani|&display=swap");
+/* line 15, ../sass/_basic.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 34, ../sass/_basic.scss */
+.basic-font {
+  font-family: "PT Sans", sans-serif;
+}
+
+/* line 38, ../sass/_basic.scss */
+.header-font {
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* line 42, ../sass/_basic.scss */
+.full-width, .center, body {
+  width: 100%;
+}
+
+/* line 46, ../sass/_basic.scss */
+.center {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* line 56, ../sass/_basic.scss */
+.photo-background {
+  background-color: #444;
+  background-attachment: fixed;
+  background-clip: border-box;
+  background-position: center;
+  color: #fff;
+  background-blend-mode: overlay;
+}
+@media (max-aspect-ratio: 3 / 2) {
+  /* line 56, ../sass/_basic.scss */
+  .photo-background {
+    background-size: auto 100%;
+  }
+}
+@media (min-aspect-ratio: 3 / 2) {
+  /* line 56, ../sass/_basic.scss */
+  .photo-background {
+    background-size: 100% auto;
+  }
+}
+
+/* line 71, ../sass/_basic.scss */
+.no-photo-background {
+  background-color: #fff;
+  color: #222;
+}
+
+/* line 76, ../sass/_basic.scss */
+.main-section {
+  min-height: 200px;
+  padding: 25px;
+}
+
+/* line 81, ../sass/_basic.scss */
+.main-section::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+/* line 87, ../sass/_basic.scss */
+.section-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 190%;
+  font-weight: bold;
+  margin: 25px 0;
+  position: relative;
+  z-index: 0;
+}
+/* line 95, ../sass/_basic.scss */
+.section-title::after {
+  content: '';
+  max-width: 70%;
+  width: 325px;
+  height: 20px;
+  background-color: #0099e6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 45px;
+  z-index: -1;
+}
+
+/* line 109, ../sass/_basic.scss */
+.photo-section-title {
+  text-align: center;
+  color: #0099e6;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 3.5em;
+  font-weight: bolder;
+  margin: 0 0 25px;
+  font-variant: small-caps;
+}
+
+/* line 120, ../sass/_basic.scss */
+.main-article {
+  border: 1px solid #fff;
+  padding: 20px;
+  text-align: justify;
+  font-family: "PT Sans", sans-serif;
+}
+
+/* line 127, ../sass/_basic.scss */
+.article-title {
+  font-size: 140%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* line 133, ../sass/_basic.scss */
+.article-content {
+  font-family: "PT Sans", sans-serif;
+  font-size: 110%;
+  margin: 0 5px;
+}
+
+/* line 139, ../sass/_basic.scss */
+.article-link-button {
+  width: 90%;
+  height: 40px;
+  margin: 30px 5% 0;
+}
+/* line 144, ../sass/_basic.scss */
+.article-link-button a:link, .article-link-button a:visited {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #0099e6;
+  color: #0099e6;
+  font-size: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 38px;
+  text-decoration: none;
+  font-weight: bolder;
+}
+/* line 158, ../sass/_basic.scss */
+.article-link-button a:hover {
+  background-color: #0099e6;
+  color: #fff;
+  font-weight: lighter;
+  transition-duration: 0.35s;
+}
+
+/* line 167, ../sass/_basic.scss */
+.section-col-2 > .column {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* line 167, ../sass/_basic.scss */
+.section-col-3 > .column {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* line 167, ../sass/_basic.scss */
+.section-col-5 > .column {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* line 7, ../sass/_header.scss */
+header {
+  height: 100vh;
+  position: relative;
+  background-image: url("../img/main_photo_3.JPG");
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 15, ../sass/_header.scss */
+.header-title {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 100;
+  font-size: 300%;
+  margin-bottom: 30px;
+}
+
+/* line 22, ../sass/_header.scss */
+.header-subtitle {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 155%;
+}
+
+/* line 27, ../sass/_header.scss */
+#title-container {
+  text-align: center;
+  font-weight: lighter;
+  border: 1px solid #FFF;
+  min-width: 300px;
+  min-height: 25vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+/* line 1, ../sass/_sections.scss */
+#profile-photo {
+  display: block;
+  float: right;
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
+}
+/* line 8, ../sass/_sections.scss */
+#profile-photo .article-content {
+  font-size: 120%;
+}
+
+/* line 13, ../sass/_sections.scss */
+#profile-photo + article {
+  float: left;
+  width: 90%;
+  margin: auto;
+}
+
+/* line 19, ../sass/_sections.scss */
+#projects-section {
+  background-image: url("../img/projects2.jpg");
+}
+
+/* line 23, ../sass/_sections.scss */
+#hobby-section {
+  background-image: url("../img/main_photo.jpg");
+}
+
+/* CONTACT ME SECTION */
+/* line 3, ../sass/_footer.scss */
+.social-icon {
+  float: left;
+  padding: 15px;
+  max-width: 150px;
+  width: 45%;
+  margin: 20px 2.5%;
+}
+/* line 10, ../sass/_footer.scss */
+.social-icon img {
+  width: 100%;
+}
+/* line 14, ../sass/_footer.scss */
+.social-icon a:hover > img {
+  filter: invert(100%);
+  transition-duration: 0.5s;
+}
+
+/* FOOTER SECTION */
+/* line 23, ../sass/_footer.scss */
+footer {
+  height: 60px;
+  font-family: "PT Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 28, ../sass/_footer.scss */
+footer p {
+  opacity: .6;
+  font-size: 90%;
+}
+
+@media screen and (min-width: 1000px) {
+  /* line 8, ../sass/_desktop.scss */
+  .main-section {
+    padding: 35px 50px;
+  }
+
+  /* line 12, ../sass/_desktop.scss */
+  .main-article {
+    padding: 20px 45px 30px;
+  }
+
+  /* line 16, ../sass/_desktop.scss */
+  .section-col-2, .section-col-3, .section-col-5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* line 28, ../sass/_desktop.scss */
+  .section-col-2 .column {
+    width: 45%;
+    margin: 20px 0;
+  }
+
+  /* line 28, ../sass/_desktop.scss */
+  .section-col-3 .column {
+    width: 30%;
+    margin: 20px 0;
+  }
+
+  /* line 28, ../sass/_desktop.scss */
+  .section-col-5 .column {
+    width: 18%;
+    margin: 20px 0;
+  }
+
+  /* line 35, ../sass/_desktop.scss */
+  .section-title::after {
+    left: 65px;
+  }
+
+  /* line 39, ../sass/_desktop.scss */
+  .column.social-icon {
+    max-width: unset;
+  }
+
+  /* line 43, ../sass/_desktop.scss */
+  #profile-photo {
+    max-width: 40%;
+    max-height: 250px;
+    width: auto;
+    margin: auto;
+  }
+
+  /* line 50, ../sass/_desktop.scss */
+  #profile-photo + article {
+    width: 60%;
+  }
+
+  /* line 54, ../sass/_desktop.scss */
+  #gallery {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 5%;
+  }
+  /* line 64, ../sass/_desktop.scss */
+  #gallery img {
+    display: block;
+    max-width: 30%;
+  }
+}
+/* line 3, ../sass/projects.scss */
+header {
+  height: 80vh;
+}
+
+/* line 7, ../sass/projects.scss */
+.go-back-to-home {
+  min-height: 100px;
+}
+/* line 10, ../sass/projects.scss */
+.go-back-to-home a:link, .go-back-to-home a:visited {
+  display: block;
+  margin: auto;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  font-size: 120%;
+  font-family: "Rajdhani", sans-serif;
+  width: 40%;
+  background-color: #0099e6;
+  color: #fff;
+  border: 1px solid #0099e6;
+}
+/* line 26, ../sass/projects.scss */
+.go-back-to-home a:hover {
+  color: #0099e6;
+  background: none;
+}
+
+/* line 32, ../sass/projects.scss */
+.project-section-title {
+  text-align: left;
+  font-size: 140%;
+  margin: 10px auto;
+}
+
+/* line 38, ../sass/projects.scss */
+.project-section-content {
+  text-align: justify;
+  text-indent: 12px;
+  margin: 10px 15px;
+}
+/* line 43, ../sass/projects.scss */
+.project-section-content a:link, .project-section-content a:visited {
+  text-decoration: none;
+  font-weight: bold;
+  color: #222;
+  font-style: italic;
+}
+/* line 50, ../sass/projects.scss */
+.project-section-content a:hover {
+  opacity: .9;
+  color: #222;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 57, ../sass/projects.scss */
+  .go-back-to-home a:link, .go-back-to-home a:visited {
+    width: 90%;
+  }
+
+  /* line 61, ../sass/projects.scss */
+  .main-article {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* line 66, ../sass/projects.scss */
+  .gist {
+    width: 85vw;
+  }
+}
